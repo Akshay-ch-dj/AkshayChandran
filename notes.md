@@ -10,3 +10,6 @@ Refer this designs
 - Things to add, that changing position.. animation, coder, freelancer---->
 - overlay effect description on project css card
 - [CSS card design - 1](https://codepen.io/akshaych/full/mdPoBeg)
+
+- For the css card it needs to add click to expand another click to go back
+feature for mobile screen compatibility.
