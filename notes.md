@@ -9,4 +9,4 @@ Refer this designs
 
 - Things to add, that changing position.. animation, coder, freelancer---->
 - overlay effect description on project css card
-- 
+- [CSS card design - 1](https://codepen.io/akshaych/full/mdPoBeg)

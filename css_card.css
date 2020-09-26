@@ -133,9 +133,9 @@ body{
 
 
 @media (max-width: 700px){
-    body{
-        /* display: none; */
-    }
+    /* body{
+        display: none;
+    }  */
 
     .container .card .face{
         width: 100%;
