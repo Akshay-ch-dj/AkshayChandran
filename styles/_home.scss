@@ -1,0 +1,28 @@
+.nav-container{
+    // background: #20AA76;
+}
+
+nav{
+    width: 80%;
+    margin: auto;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+
+    ul{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul li{
+        list-style: none;
+    }
+}
+
+.pf-photo{
+    margin-top: 100px;
+}
