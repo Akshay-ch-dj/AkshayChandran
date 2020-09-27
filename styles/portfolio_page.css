@@ -2,8 +2,6 @@ html {
   font-size: 62.5%;
 }
 
-/* font-family: 'Montserrat', sans-serif; */
-/* font-family: 'Poppins', sans-serif; */
 * {
   margin: 0;
   padding: 0;
@@ -54,6 +52,11 @@ nav {
   padding: 1rem 0rem;
 }
 
+nav #heading {
+  font-family: 'Major Mono Display', monospace;
+  margin-left: 10%;
+}
+
 nav ul {
   width: 40%;
   display: -webkit-box;
@@ -71,8 +74,93 @@ nav ul li {
   list-style: none;
 }
 
-.pf-photo {
-  margin-top: 100px;
+#welcome {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 1fr 1fr 10%;
+      grid-template-columns: 10% 1fr 1fr 10%;
+  -ms-grid-rows: 10% 1fr 10%;
+      grid-template-rows: 10% 1fr 10%;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#welcome .pf-card {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  width: 70%;
+  height: 100%;
+  border-radius: 60px;
+  background: #20AA76;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+#welcome .wel-note {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+#welcome .pf-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 16vw;
+  height: 16vw;
+  position: relative;
+}
+
+#welcome .pf-photo img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+#welcome h3 {
+  font-size: 2.4rem;
+}
+
+#welcome p {
+  font-size: 2rem;
+}
+
+#welcome .pf-location i {
+  font-size: 2.5rem;
+}
+
+#welcome .pf-email {
+  margin-bottom: 50px;
+}
+
+#welcome .pf-email i {
+  font-size: 2.5rem;
+}
+
+#welcome .pf-contact-icons i {
+  font-size: 3rem;
+  margin: 10px;
+  color: white;
 }
 
 #welcome {
