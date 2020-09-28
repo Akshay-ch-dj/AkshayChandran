@@ -1,0 +1,25 @@
+.side-dots{
+    position: fixed;
+    top: 50vh;
+    left: 95vw;
+    width: 15px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+
+    div{
+        border: 1px solid #006842d7;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .dot-active{
+        background: $base-color;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
+    }
+}

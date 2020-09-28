@@ -1,36 +1,7 @@
-.nav-container{
-    // background: #20AA76;
-}
-
-nav{
-    width: 80%;
-    margin: auto;
-    min-height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0rem;
-
-    #heading{
-        font-family: 'Major Mono Display', monospace;
-        margin-left: 10%;
-    }
-
-    ul{
-        width: 40%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul li{
-        list-style: none;
-    }
-}
 
 #welcome{
     display: grid;
-    grid-template-columns: 10% 1fr 1fr 10%;
+    grid-template-columns: 5% 1fr 1fr 10%;
     grid-template-rows: 10% 1fr 10%;
     justify-items: center;
     align-items: center;
@@ -41,57 +12,101 @@ nav{
         width: 70%;
         height: 100%;
         border-radius: 60px;
-        background: #20AA76;
+        background: $base-color;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         color: white;
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+
+        .pf-photo{
+            border-radius: 50%;
+            overflow: hidden;
+            width: 16vw;
+            height: 16vw;
+            position: relative;
+        }
+
+        .pf-photo img{
+            position: absolute;
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+
+        h3{
+            font-size: 2.4rem;
+        }
+
+        p{
+            font-size: 2rem;
+        }
+
+        .pf-location i{
+            font-size: 2.5rem;
+        }
+
+        .pf-email{
+            margin-bottom: 50px;
+        }
+
+        .pf-email i{
+            font-size: 2.5rem;
+        }
+
+        .pf-contact-icons i{
+            font-size: 3rem;
+            margin: 10px;
+            color: white;
+        }
+
     }
 
     .wel-note{
         grid-column: 3/4;
         grid-row: 2/3;
-    }
-
-    .pf-photo{
-        border-radius: 50%;
-        overflow: hidden;
-        width: 16vw;
-        height: 16vw;
-        position: relative;
-    }
-
-    .pf-photo img{
-        position: absolute;
         width: 100%;
-        height: auto;
-        margin: auto;
+        height: 100%;
+        border-radius: 50px;
+        box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .wel-note-content{
+            margin: 20px 10px;
+            width: 60%;
+            height: 60%;
+        }
+
+        p{
+            font-size: 2.2rem;
+            margin: 10px 0px;
+            line-height: 3.8rem;
+        }
+
+        .wel-note-main {
+            margin: 30px 0px;
+            font-size: 2.4rem;
+            font-weight: 600;
+        }
+
+        .wel-btn{
+            position: absolute;
+            top: 88%;
+            transform: translateY(-88%);
+            width: 60%;
+            height: 50px;
+            color: white;
+            background: radial-gradient($base-color 80%, #20aa75c2);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.6rem;
+            box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+        }
     }
 
-    h3{
-        font-size: 2.4rem;
-    }
-
-    p{
-        font-size: 2rem;
-    }
-
-    .pf-location i{
-        font-size: 2.5rem;
-    }
-
-    .pf-email{
-        margin-bottom: 50px;
-    }
-
-    .pf-email i{
-        font-size: 2.5rem;
-    }
-
-    .pf-contact-icons i{
-        font-size: 3rem;
-        margin: 10px;
-        color: white;
-    }
 }

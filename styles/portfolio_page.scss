@@ -8,6 +8,8 @@ html{
 // font-family: 'Major Mono Display', monospace;
 
 
+$base-color: #20AA76;
+
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +18,7 @@ html{
 
 body{
     color:black;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1{
@@ -41,7 +43,9 @@ a{
     text-decoration: none;
 }
 
+@import 'nav';
 @import 'home';
+@import 'dots';
 
 
 #welcome{

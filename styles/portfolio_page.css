@@ -11,7 +11,7 @@ html {
 
 body {
   color: black;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -36,49 +36,65 @@ a {
   text-decoration: none;
 }
 
-nav {
-  width: 80%;
-  margin: auto;
-  min-height: 10vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem 0rem;
+.nav-home nav {
+  min-height: 15vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 1fr 1fr 10%;
+      grid-template-columns: 5% 1fr 1fr 10%;
+  -ms-grid-rows: 5% 1fr 5%;
+      grid-template-rows: 5% 1fr 5%;
+  justify-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-nav #heading {
+.nav-home #heading {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
   font-family: 'Major Mono Display', monospace;
-  margin-left: 10%;
+  -ms-grid-column-align: self-start;
+      justify-self: self-start;
+  margin-left: 25%;
 }
 
-nav ul {
-  width: 40%;
+.nav-home ul {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  justify-self: self-end;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding-right: 10px;
 }
 
-nav ul li {
+.nav-home ul li {
   list-style: none;
+  font-size: 1.8rem;
+}
+
+.nav-home ul li a {
+  border-bottom: solid 3px #20AA76;
 }
 
 #welcome {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10% 1fr 1fr 10%;
-      grid-template-columns: 10% 1fr 1fr 10%;
+  -ms-grid-columns: 5% 1fr 1fr 10%;
+      grid-template-columns: 5% 1fr 1fr 10%;
   -ms-grid-rows: 10% 1fr 10%;
       grid-template-rows: 10% 1fr 10%;
   justify-items: center;
@@ -111,6 +127,49 @@ nav ul li {
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+#welcome .pf-card .pf-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 16vw;
+  height: 16vw;
+  position: relative;
+}
+
+#welcome .pf-card .pf-photo img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+#welcome .pf-card h3 {
+  font-size: 2.4rem;
+}
+
+#welcome .pf-card p {
+  font-size: 2rem;
+}
+
+#welcome .pf-card .pf-location i {
+  font-size: 2.5rem;
+}
+
+#welcome .pf-card .pf-email {
+  margin-bottom: 50px;
+}
+
+#welcome .pf-card .pf-email i {
+  font-size: 2.5rem;
+}
+
+#welcome .pf-card .pf-contact-icons i {
+  font-size: 3rem;
+  margin: 10px;
+  color: white;
 }
 
 #welcome .wel-note {
@@ -120,47 +179,96 @@ nav ul li {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-}
-
-#welcome .pf-photo {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 16vw;
-  height: 16vw;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
-#welcome .pf-photo img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  margin: auto;
+#welcome .wel-note .wel-note-content {
+  margin: 20px 10px;
+  width: 60%;
+  height: 60%;
 }
 
-#welcome h3 {
+#welcome .wel-note p {
+  font-size: 2.2rem;
+  margin: 10px 0px;
+  line-height: 3.8rem;
+}
+
+#welcome .wel-note .wel-note-main {
+  margin: 30px 0px;
   font-size: 2.4rem;
+  font-weight: 600;
 }
 
-#welcome p {
-  font-size: 2rem;
-}
-
-#welcome .pf-location i {
-  font-size: 2.5rem;
-}
-
-#welcome .pf-email {
-  margin-bottom: 50px;
-}
-
-#welcome .pf-email i {
-  font-size: 2.5rem;
-}
-
-#welcome .pf-contact-icons i {
-  font-size: 3rem;
-  margin: 10px;
+#welcome .wel-note .wel-btn {
+  position: absolute;
+  top: 88%;
+  -webkit-transform: translateY(-88%);
+          transform: translateY(-88%);
+  width: 60%;
+  height: 50px;
   color: white;
+  background: radial-gradient(#20AA76 80%, #20aa75c2);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  -webkit-box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.side-dots {
+  position: fixed;
+  top: 50vh;
+  left: 95vw;
+  width: 15px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+}
+
+.side-dots div {
+  border: 1px solid #006842d7;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.side-dots .dot-active {
+  background: #20AA76;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
 }
 
 #welcome {
