@@ -10,7 +10,7 @@ html{
 
 $base-color: #20AA76;
 
-*{
+*, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -46,6 +46,7 @@ a{
 @import 'nav';
 @import 'home';
 @import 'dots';
+@import 'projects';
 
 
 @media (max-width: 960px){
