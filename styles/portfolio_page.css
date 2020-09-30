@@ -13,6 +13,11 @@ html {
 body {
   color: black;
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: center;
 }
 
 h1 {
@@ -35,6 +40,11 @@ li {
 a {
   color: black;
   text-decoration: none;
+}
+
+.nav-home {
+  -webkit-transition: background 250ms ease-in;
+  transition: background 250ms ease-in;
 }
 
 .nav-home nav {
@@ -62,7 +72,7 @@ a {
   font-size: 2.4rem;
   -ms-grid-column-align: self-start;
       justify-self: self-start;
-  margin-left: 30%;
+  margin-left: 35%;
 }
 
 .nav-home ul {
@@ -106,6 +116,8 @@ a {
   width: 100%;
   height: 4px;
   border-radius: 2px;
+  -webkit-box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-home ul .active {
@@ -122,6 +134,52 @@ a {
   background: #20AA76;
   -webkit-transition: width 0.25s;
   transition: width 0.25s;
+}
+
+.nav-container {
+  background: #20AA76;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: background 250ms ease-in;
+  transition: background 250ms ease-in;
+  -webkit-box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container nav {
+  min-height: 8vh;
+  display: -ms-grid;
+  display: grid;
+}
+
+.nav-container nav #heading {
+  font-size: 2rem;
+  margin-left: 20%;
+}
+
+.nav-container nav ul {
+  width: 90%;
+}
+
+.nav-container nav ul li {
+  font-size: 1.6rem;
+}
+
+.nav-container nav ul li a::after {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.nav-container nav ul li a:hover::after {
+  height: 2px;
+  -webkit-box-shadow: 0px 4px 6px 4px rgba(24, 126, 83, 0.322);
+          box-shadow: 0px 4px 6px 4px rgba(24, 126, 83, 0.322);
+}
+
+.nav-container nav ul .active::after {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 #welcome {

@@ -19,6 +19,11 @@ $base-color: #20AA76;
 body{
     color:black;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+section{
+    scroll-snap-align: center;
 }
 
 h1{
