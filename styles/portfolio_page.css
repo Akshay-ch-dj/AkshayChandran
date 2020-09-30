@@ -42,12 +42,12 @@ a {
   display: grid;
   -ms-grid-columns: 5% 1fr 1fr 10%;
       grid-template-columns: 5% 1fr 1fr 10%;
-  -ms-grid-rows: 5% 1fr 5%;
-      grid-template-rows: 5% 1fr 5%;
+  -ms-grid-rows: 10% 1fr 5%;
+      grid-template-rows: 10% 1fr 5%;
   justify-items: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav-home #heading {
@@ -58,9 +58,10 @@ a {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   font-family: 'Major Mono Display', monospace;
+  font-size: 2.4rem;
   -ms-grid-column-align: self-start;
       justify-self: self-start;
-  margin-left: 25%;
+  margin-left: 30%;
 }
 
 .nav-home ul {
@@ -70,33 +71,68 @@ a {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  justify-self: self-end;
-  width: 95%;
+  justify-self: center;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-right: 10px;
 }
 
 .nav-home ul li {
   list-style: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .nav-home ul li a {
-  border-bottom: solid 3px #20AA76;
+  position: relative;
+}
+
+.nav-home ul li a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: #20AA76;
+  -webkit-transition: width 0.25s;
+  transition: width 0.25s;
+}
+
+.nav-home ul li a:hover::after {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-home ul .active {
+  position: relative;
+}
+
+.nav-home ul .active::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #20AA76;
+  -webkit-transition: width 0.25s;
+  transition: width 0.25s;
 }
 
 #welcome {
+  min-height: 80vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5% 1fr 1fr 10%;
       grid-template-columns: 5% 1fr 1fr 10%;
-  -ms-grid-rows: 10% 1fr 10%;
-      grid-template-rows: 10% 1fr 10%;
+  -ms-grid-rows: 5% 1fr 5%;
+      grid-template-rows: 5% 1fr 5%;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -110,7 +146,7 @@ a {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  width: 70%;
+  width: 60%;
   height: 100%;
   border-radius: 60px;
   background: #20AA76;
@@ -134,8 +170,8 @@ a {
 #welcome .pf-card .pf-photo {
   border-radius: 50%;
   overflow: hidden;
-  width: 16vw;
-  height: 16vw;
+  width: 14vw;
+  height: 14vw;
   position: relative;
 }
 
@@ -147,15 +183,15 @@ a {
 }
 
 #welcome .pf-card h3 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 #welcome .pf-card p {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 #welcome .pf-card .pf-location i {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 #welcome .pf-card .pf-email {
@@ -163,11 +199,11 @@ a {
 }
 
 #welcome .pf-card .pf-email i {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 #welcome .pf-card .pf-contact-icons i {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin: 10px;
   color: white;
 }
@@ -236,8 +272,10 @@ a {
 
 .side-dots {
   position: fixed;
-  top: 50vh;
-  left: 95vw;
+  top: 50%;
+  left: 95%;
+  -webkit-transform: translate(-95%, -50%);
+          transform: translate(-95%, -50%);
   width: 15px;
   height: 100px;
   display: -webkit-box;
@@ -269,9 +307,5 @@ a {
   background: #20AA76;
   -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
           box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
-}
-
-#welcome {
-  height: 100vh;
 }
 /*# sourceMappingURL=portfolio_page.css.map */

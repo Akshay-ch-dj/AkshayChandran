@@ -1,15 +1,16 @@
 
 #welcome{
+    min-height: 80vh;
     display: grid;
     grid-template-columns: 5% 1fr 1fr 10%;
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-rows: 5% 1fr 5%;
     justify-items: center;
     align-items: center;
 
     .pf-card{
         grid-column: 2/3;
         grid-row: 2/3;
-        width: 70%;
+        width: 60%;
         height: 100%;
         border-radius: 60px;
         background: $base-color;
@@ -23,8 +24,8 @@
         .pf-photo{
             border-radius: 50%;
             overflow: hidden;
-            width: 16vw;
-            height: 16vw;
+            width: 14vw;
+            height: 14vw;
             position: relative;
         }
 
@@ -36,15 +37,15 @@
         }
 
         h3{
-            font-size: 2.4rem;
+            font-size: 2.2rem;
         }
 
         p{
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .pf-location i{
-            font-size: 2.5rem;
+            font-size: 2.4rem;
         }
 
         .pf-email{
@@ -52,11 +53,11 @@
         }
 
         .pf-email i{
-            font-size: 2.5rem;
+            font-size: 2.4rem;
         }
 
         .pf-contact-icons i{
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin: 10px;
             color: white;
         }
