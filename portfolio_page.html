@@ -19,14 +19,16 @@
 </head>
 <body>
     <main>
+        <div class="parent-container">
+
         <!-- nav-home -->
         <div class="nav-home">
             <nav id="navbar">
                 <h1 id="heading">AC.dev</h1>
                 <ul class="nav-links">
-                    <li class="nav-link home-link"><a href="#home">Home</a></li>
-                    <li class="nav-link about-link"><a href="#about">Projects</a></li>
-                    <li class="nav-link project-link"><a href="#projects">About </a></li>
+                    <li class="nav-link home-link"><a href="#welcome">Home</a></li>
+                    <li class="nav-link about-link"><a href="#projects">Projects</a></li>
+                    <li class="nav-link project-link"><a href="#about">About </a></li>
                 </ul>
             </nav>
         </div>
@@ -183,8 +185,85 @@
 
 
         <section id="about">
-            <div id="profile-link"></div>
+            <div id="profile-link" class="about-page">
+
+                <!-- about me box -->
+                <div class="about-me">
+                    <div class="about-description">
+                        <h3 class="about-head">About Me</h3>
+                        <p class="about-des-details">
+                            &emsp;&emsp;&emsp;&emsp;I am a junior fullstack developer mainly using javascript frontend and
+                            python with django framework for backend. I loves solving problems,
+                            learning new technologies and creating amazing things made from scratch.
+                        </p>
+                    </div>
+                    <div class="about-info">
+
+                    </div>
+                </div>
+
+                <!-- Contact box -->
+                <div class="contact-me">
+                    <h3 class="contact-head">Sent me a message</h3>
+                    <form id="contact-form">
+                        <!-- Name -->
+                        <div class="form-field">
+                            <label id="name-label" for="name">Name</label>
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="name"
+                                placeholder="Enter Your Name"
+                                required>
+                        </div>
+                        <!-- email -->
+                        <div class="form-field">
+                            <label id="email-label" for="email">Email</label>
+                            <input
+                                type="email"
+                                class="form-input"
+                                id="email"
+                                placeholder="Enter Your email"
+                                required>
+                        </div>
+                        <!-- message -->
+                        <div class="form-field">
+                            <label id="text-label" for="text-input">Message</label>
+                            <textarea
+                                name="message"
+                                class="form-input"
+                                id="text-input"
+                                placeholder="Enter the message here..."
+                                required></textarea>
+                        </div>
+                        <!-- Submit button -->
+                        <button id="submit" class="submit-button" type="submit">
+                            Submit</button>
+                    </form>
+                </div>
+            </div>
         </section>
+
+        <!-- end button to top -->
+        <div class="btn-top">
+            <div class="btn-img"></div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer-tab">
+            <div class="footer-left">
+                <p><span class="copyright">&#169;</span> 2020</p>
+            </div>
+            <div class="icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-right">
+                <p>Made with ❤️️ by akshay..</p>
+            </div>
+        </footer>
+
+        </div>
     </main>
 
 

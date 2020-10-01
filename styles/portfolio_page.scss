@@ -19,11 +19,20 @@ $base-color: #20AA76;
 body{
     color:black;
     font-family: 'Montserrat', sans-serif;
+    // overflow: hidden;
+}
+
+.parent-container{
+    margin: 0;
+    // overflow-y: scroll;
     scroll-behavior: smooth;
+    scroll-snap-type: mandatory; /* for older browsers */
+    scroll-snap-points-y: repeat(100vh); /* for older browsers */
+    scroll-snap-type: y mandatory;
 }
 
 section{
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 h1{
@@ -52,6 +61,8 @@ a{
 @import 'home';
 @import 'dots';
 @import 'projects';
+@import 'about';
+@import 'footer';
 
 
 @media (max-width: 960px){

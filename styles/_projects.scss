@@ -6,12 +6,14 @@
 // ****************        project cards         ****************
 
 #projects{
-    min-height: 100vh;
+    min-height: 85vh;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     grid-template-rows: 5% 1fr 5%;
+    justify-items: center;
 }
 
 .project-tile{
@@ -19,19 +21,21 @@
     grid-row: 2/3;
     // position: relative;
     border-radius: 50px;
+    width: 90%;
+    height: 85vh;
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     .row-1, .row-2 {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 90%;
+        width: 95%;
     }
 
 }
@@ -41,8 +45,8 @@
     position: relative;
 
     .face{
-        width: 300px;
-        height: 200px;
+        width: 240px;
+        height: 160px;
 
         transition: 0.5s;
     }
@@ -53,6 +57,7 @@
         background :#fff;
         display: flex;
         justify-content: center;
+        border-radius: 10px;
         align-items: center;
         // image on top
         z-index: 1;
@@ -60,7 +65,7 @@
         .content{
 
             img{
-                width: 150px;
+                width: 120px;
                 // width: 100px;
                 height: auto;
 
@@ -68,11 +73,11 @@
             }
 
             h3{
-                margin: 10px 0 0;
+                margin: 5px 0 0;
                 padding: 0;
                 color: black;
                 text-align: center;
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
 
         }
@@ -85,7 +90,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 15px;
+        border-radius: 10px;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 
         .content{
@@ -96,7 +102,7 @@
             }
 
             a{
-                margin: 15px 0 0;
+                margin: 8px 0 0;
                 display: inline-block;
 
                 text-decoration: none;
@@ -120,18 +126,15 @@
 .container{
     // Face 1 movement
     .card .face.face1{
-        transform: translateY(100px);
+        transform: translateY(50px);
     }
 
     .card:hover .face.face1,
     .card:focus .face.face1,
     .card:active .face.face1{
-        /* background: skyblue; */
         transform: translateY(0px);
-
-        // .content img{
-        //     width: 100px;
-        // }
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
 
     .card .face.face1 .content{
@@ -153,6 +156,8 @@
     .card:focus .face.face2,
     .card:active .face.face2{
         transform: translateY(0px);
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
 }
 
