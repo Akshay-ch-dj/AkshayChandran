@@ -321,11 +321,17 @@ a {
   color: white;
   background: radial-gradient(#20AA76 80%, #20aa75c2);
   border: none;
+  outline: none;
   border-radius: 10px;
   font-size: 1.6rem;
   cursor: pointer;
   -webkit-box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+#welcome .wel-note .wel-btn:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .side-dots {
@@ -654,22 +660,24 @@ a {
 
 .about-description p {
   margin: 2rem 4rem;
+  padding: 0rem 1rem;
   text-align: justify;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  line-height: 2.5rem;
 }
 
 .about-description::after {
   content: '';
   display: block;
-  width: 85%;
+  width: 83%;
   height: 4px;
   background: #20AA76;
   border-radius: 4px;
   position: absolute;
-  top: 100%;
+  top: 105%;
   left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -105%);
+          transform: translate(-50%, -105%);
 }
 
 .about-info {
@@ -680,7 +688,7 @@ a {
       align-self: center;
   font-size: 1.8rem;
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -694,7 +702,7 @@ a {
 }
 
 .about-info .about-tabs button {
-  background-color: inherit;
+  background-color: #20aa7510;
   float: left;
   border: none;
   outline: none;
@@ -744,6 +752,114 @@ a {
   to {
     opacity: 1;
   }
+}
+
+.about-info #Skills {
+  margin-top: 2rem;
+}
+
+.about-info #Skills p {
+  font-size: 1.7rem;
+  margin: 2rem 1rem;
+}
+
+.about-info #Skills p .m-text {
+  font-weight: 600;
+}
+
+.about-info #Skills p i {
+  margin-left: 2rem;
+}
+
+.about-info #Skills p .iconify {
+  margin-left: 2rem;
+}
+
+.about-info #Skills .languages .opt {
+  margin-left: 4rem;
+}
+
+.about-info #Skills .frameworks .opt {
+  margin-left: 2.8rem;
+}
+
+.about-info #Skills .design_tools .opt {
+  margin-left: 2.7rem;
+}
+
+.about-info #Skills .dev_tools .opt {
+  margin-left: 5rem;
+}
+
+.about-info #Experience {
+  margin: 4rem 3.5rem;
+}
+
+.about-info #Experience .exp-list {
+  list-style: none;
+}
+
+.about-info #Experience .exp-list li {
+  margin: 2rem 0rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+}
+
+.about-info #Experience .exp-list li a {
+  color: #055c1f;
+}
+
+.about-info #Experience .exp-list li a:hover,
+.about-info #Experience .exp-list li a:focus,
+.about-info #Experience .exp-list li a:active {
+  color: #20AA76;
+}
+
+.about-info #Experience .exp-list li span {
+  font-weight: 600;
+}
+
+.about-info #Experience .exp-list li::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: solid 2px black;
+  background: #20AA76;
+  display: inline-block;
+  margin: 0rem 1rem 0rem -2rem;
+}
+
+.about-info #Education {
+  margin: 4rem 4rem;
+}
+
+.about-info #Education p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+}
+
+.about-info #Education p::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: solid 2px black;
+  background: #20AA76;
+  display: inline-block;
+  margin: 0rem 1rem 0rem -2rem;
+}
+
+.about-info #Education a {
+  color: #055c1f;
+}
+
+.about-info #Education a:hover,
+.about-info #Education a:focus,
+.about-info #Education a:active {
+  color: #20AA76;
 }
 
 .contact-head {
@@ -831,6 +947,7 @@ a {
   border-radius: 8px;
   cursor: pointer;
   border: none;
+  outline: rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
 }
@@ -886,5 +1003,9 @@ a {
   text-align: end;
   font-size: 1.5rem;
   margin-right: 5rem;
+}
+
+#footer-tab .footer-right p span {
+  font-family: 'Major Mono Display', monospace;
 }
 /*# sourceMappingURL=portfolio_page.css.map */

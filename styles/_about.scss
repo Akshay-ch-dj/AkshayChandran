@@ -61,22 +61,24 @@
 
     p{
         margin: 2rem 4rem;
+        padding: 0rem 1rem;
         text-align: justify;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        line-height: 2.5rem;
     }
 }
 
 .about-description::after{
     content: '';
     display: block;
-    width: 85%;
+    width: 83%;
     height: 4px;
     background: $base-color;
     border-radius: 4px;
     position: absolute;
-    top: 100%;
+    top: 105%;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -105%);
 }
 
 .about-info{
@@ -85,7 +87,7 @@
     align-self: center;
     font-size: 1.8rem;
     position: relative;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 
     .about-tabs {
@@ -93,7 +95,7 @@
 
         /* Style the buttons that are used to open the tab content */
         button {
-            background-color: inherit;
+            background-color:  #20aa7510;
             float: left;
             border: none;
             outline: none;
@@ -132,6 +134,124 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+    }
+
+    #Skills{
+        margin-top: 2rem;
+        p{
+            font-size: 1.7rem;
+            margin: 2rem 1rem;
+
+            .m-text{
+                font-weight: 600;
+            }
+
+            i{
+                margin-left: 2rem;
+            }
+
+            .iconify{
+                margin-left: 2rem;
+            }
+        }
+
+        .languages{
+            .opt{
+                margin-left: 4rem;
+            }
+        }
+
+        .frameworks{
+            .opt{
+                margin-left: 2.8rem;
+            }
+        }
+
+        .design_tools{
+            .opt{
+                margin-left: 2.7rem;
+            }
+        }
+
+        .dev_tools{
+            .opt{
+                margin-left: 5rem;
+            }
+        }
+
+    }
+
+    #Experience{
+        margin: 4rem 3.5rem;
+
+        .exp-list{
+            list-style: none;
+
+            li{
+                margin: 2rem 0rem;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5rem;
+                line-height: 2.6rem;
+
+                a{
+                    color: rgb(5, 92, 31);
+                }
+
+                a:hover,
+                a:focus,
+                a:active{
+                    color: $base-color;
+                }
+
+                span{
+                    font-weight: 600;
+                }
+            }
+
+            li::before{
+                content: "";  // bullet
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                border:solid 2px black;
+                background: $base-color;
+                display: inline-block;
+                margin: 0rem 1rem 0rem -2rem;
+            }
+
+        }
+    }
+
+    #Education{
+        margin: 4rem 4rem;
+
+        p{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            line-height: 2.6rem;
+        }
+
+        p::before{
+            content: "";
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            border:solid 2px black;
+            background: $base-color;
+            display: inline-block;
+            margin: 0rem 1rem 0rem -2rem;
+        }
+
+        a{
+            color: rgb(5, 92, 31);
+        }
+
+        a:hover,
+        a:focus,
+        a:active{
+            color: $base-color;
+        }
+
     }
 }
 
@@ -214,6 +334,7 @@
         border-radius: 8px;
         cursor: pointer;
         border: none;
+        outline: rgba(0, 0, 0, 0.5);
         box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
     }
 }

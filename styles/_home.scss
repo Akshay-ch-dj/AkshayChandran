@@ -104,10 +104,15 @@
             color: white;
             background: radial-gradient($base-color 80%, #20aa75c2);
             border: none;
+            outline: none;
             border-radius: 10px;
             font-size: 1.6rem;
             cursor: pointer;
             box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .wel-btn:active{
+            box-shadow: none;
         }
     }
 
