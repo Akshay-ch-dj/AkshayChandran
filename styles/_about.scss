@@ -81,13 +81,60 @@
 
 .about-info{
     height: 70%;
-    width: 95%;
+    width: 80%;
     align-self: center;
     font-size: 1.8rem;
     position: relative;
-    background: palevioletred;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+
+    .about-tabs {
+        overflow: hidden;
+
+        /* Style the buttons that are used to open the tab content */
+        button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 1vh 1vw;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            margin-right: 1vh;
+            transition: 0.3s;
+        }
+
+        /* Change background color of buttons on hover */
+        button:hover{
+            background-color: #20aa7563;
+            color: #f1f1f1;
+        }
+
+        /* Create an active/current tab-link class */
+        button.active {
+            background-color: #20AA76;
+            color: #f1f1f1;
+        }
+
+        /* Style the tab content */
+        .tab-content {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            animation: fadeEffect 500ms; /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    }
 }
+
 
 .contact-head{
     font-size: 2rem;

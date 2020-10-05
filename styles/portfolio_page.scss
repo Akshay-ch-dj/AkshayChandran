@@ -1,6 +1,7 @@
 html{
     // Set to 10px
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 // font-family: 'Montserrat', sans-serif;
@@ -22,14 +23,13 @@ body{
     // overflow: hidden;
 }
 
-.parent-container{
-    margin: 0;
-    // overflow-y: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: mandatory; /* for older browsers */
-    scroll-snap-points-y: repeat(100vh); /* for older browsers */
-    scroll-snap-type: y mandatory;
-}
+// .parent-container{
+//     margin: 0;
+//     // overflow-y: scroll;
+//     scroll-snap-type: mandatory; /* for older browsers */
+//     scroll-snap-points-y: repeat(100vh); /* for older browsers */
+//     scroll-snap-type: y mandatory;
+// }
 
 section{
     scroll-snap-align: start;

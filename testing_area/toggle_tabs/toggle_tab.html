@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link local CSS -->
+    <link rel="stylesheet" href="./toggle_tab.css">
+
+    <title>Tabs_toggle</title>
+</head>
+<body>
+    <h1>Toggle Tabs</h1>
+    <div class="about-tabs">
+        <button class="tab-links" onclick="openSec(event, 'Skills')" id="defaultOpen">Skills & Technologies</button>
+        <button class="tab-links" onclick="openSec(event, 'Experience')">Experience</button>
+        <button class="tab-links" onclick="openSec(event, 'Education')">Education</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Skills" class="tab-content active">
+        <h3>Skills & Technologies</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Experience" class="tab-content">
+        <h3>Experience</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Education" class="tab-content">
+        <h3>Education</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <!-- Local JS -->
+    <script src="./toggle_tab.js"></script>
+</body>
+</html>

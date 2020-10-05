@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 *, ::before, ::after {
@@ -13,19 +14,6 @@ html {
 body {
   color: black;
   font-family: 'Montserrat', sans-serif;
-}
-
-.parent-container {
-  margin: 0;
-  scroll-behavior: smooth;
-  -ms-scroll-snap-type: mandatory;
-      scroll-snap-type: mandatory;
-  /* for older browsers */
-  -ms-scroll-snap-points-y: repeat(100vh);
-      scroll-snap-points-y: repeat(100vh);
-  /* for older browsers */
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
 }
 
 section {
@@ -686,14 +674,76 @@ a {
 
 .about-info {
   height: 70%;
-  width: 95%;
+  width: 80%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   font-size: 1.8rem;
   position: relative;
-  background: palevioletred;
+  margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.about-info .about-tabs {
+  overflow: hidden;
+  /* Style the buttons that are used to open the tab content */
+  /* Change background color of buttons on hover */
+  /* Create an active/current tab-link class */
+  /* Style the tab content */
+  /* Go from zero to full opacity */
+}
+
+.about-info .about-tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1vh 1vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  margin-right: 1vh;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.about-info .about-tabs button:hover {
+  background-color: #20aa7563;
+  color: #f1f1f1;
+}
+
+.about-info .about-tabs button.active {
+  background-color: #20AA76;
+  color: #f1f1f1;
+}
+
+.about-info .about-tabs .tab-content {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 500ms;
+          animation: fadeEffect 500ms;
+  /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .contact-head {
