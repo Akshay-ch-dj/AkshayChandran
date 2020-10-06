@@ -11,12 +11,27 @@
     align-items: center;
     background: white;
 
-    div{
+    .dot-link{
         border: 1px solid #006842d7;
         border-radius: 50%;
         width: 15px;
         height: 15px;
+        cursor: pointer;
         box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+        position: relative;
+
+        a::before{
+            content: '';
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: none;
+        }
     }
 
     .dot-active{

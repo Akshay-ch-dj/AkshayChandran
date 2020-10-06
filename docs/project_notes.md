@@ -22,3 +22,14 @@ feature for mobile screen compatibility.
 
 
 * The navbar transition uploaded to [codepen](https://codepen.io/akshaych/full/oNxRpNX)
+
+
+### Dynamic navbar toggle with intersection observer
+---
+
+* To identify the current section and add the active class to those nav bar.
+* Add intersection observer for all sections, get the current section id, find the nav-link class\
+  with the same id, add the active class.
+* Also find the side button with the same class add its active class to it.
+* make use of filter function to filter out the isIntersecting = true sections, if needed
+* 
