@@ -91,6 +91,14 @@ let addMarks = (entries) => {
             const buttonItem = document.querySelector(`.${activeItem}-dot`);
             addBottomBar(navItem);
             addHighlight(buttonItem);
+
+            const backButton = document.querySelector('.btn-top');
+            if (activeItem === 'about') {
+                backButton.style.display = "flex";
+            }
+            else{
+                backButton.style.display = "none";
+            }
         }
     })
 }

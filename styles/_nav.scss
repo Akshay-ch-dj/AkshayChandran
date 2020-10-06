@@ -35,6 +35,7 @@
 
         li a{
             position: relative;
+            text-decoration: none;
         }
 
         li a::after{
@@ -91,6 +92,7 @@
         #heading{
             font-size: 2rem;
             margin-left: 20%;
+            color: #0f0f0f;
         }
 
         ul{
@@ -98,6 +100,10 @@
 
             li{
                 font-size: 1.6rem;
+
+                a{
+                    color: #0f0f0f;
+                }
             }
 
             li a::after{
