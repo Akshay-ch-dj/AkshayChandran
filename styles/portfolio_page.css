@@ -418,6 +418,7 @@ a {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  position: relative;
   border-radius: 50px;
   width: 90%;
   height: 85vh;
@@ -448,6 +449,36 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 95%;
+}
+
+.project-tile .project-title {
+  position: absolute;
+  z-index: -2;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+  width: 85%;
+  height: 5px;
+  background-color: #20AA76;
+}
+
+.project-tile .project-title .title-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+  width: 40%;
+  background: white;
+}
+
+.project-tile .project-title .title-container h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #20AA76;
 }
 
 .card {

@@ -19,7 +19,7 @@
 .project-tile{
     grid-column: 2/3;
     grid-row: 2/3;
-    // position: relative;
+    position: relative;
     border-radius: 50px;
     width: 90%;
     height: 85vh;
@@ -36,6 +36,36 @@
         justify-content: space-around;
         align-items: center;
         width: 95%;
+    }
+
+    .project-title{
+        position: absolute;
+        z-index: -2;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        width: 85%;
+        height: 5px;
+        background-color: $base-color;
+
+
+        .title-container{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            width: 40%;
+            background: white;
+
+            h2{
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 3rem;
+                font-family: 'Montserrat', sans-serif;
+                color: $base-color;
+            }
+        }
+
     }
 
 }
