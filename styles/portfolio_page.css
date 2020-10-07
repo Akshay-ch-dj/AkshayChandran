@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -186,6 +185,119 @@ a {
 .nav-container nav ul .active::after {
   height: 2px;
   background: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  .nav-home {
+    background: #20AA76;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    z-index: 5;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .nav-home nav {
+    min-height: 8vh;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  .nav-home .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    -webkit-transform: translate(-5%, -50%);
+            transform: translate(-5%, -50%);
+  }
+  .nav-home .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 5px;
+  }
+  .nav-home #heading {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2.4rem;
+    -ms-grid-column-align: self-start;
+        justify-self: self-start;
+    margin-left: 0%;
+  }
+  .nav-home ul {
+    position: fixed;
+    top: 0;
+    background-color: #20AA76;
+    margin-top: 8vh;
+    height: 93vh;
+    width: 100%;
+    margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    list-style: none;
+    /* Using a mask for the dropdown */
+    clip-path: circle(100px at 85% -25%);
+    -webkit-clip-path: circle(100px at 85% -25%);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+  }
+  .nav-home ul li a {
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .nav-home ul .active::after {
+    background: black;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
+  }
+  .nav-home ul.open {
+    clip-path: circle(1000px at 85% -25%);
+    -webkit-clip-path: circle(1000px at 85% -25%);
+    z-index: 1;
+    pointer-events: all;
+  }
+  .nav-home .nav-links li {
+    opacity: 0;
+  }
+  .nav-home .nav-links li:nth-child(1) {
+    -webkit-transition: all 0.5s ease-in 0.1s;
+    transition: all 0.5s ease-in 0.1s;
+  }
+  .nav-home .nav-links li:nth-child(2) {
+    -webkit-transition: all 0.5s ease-in 0.2s;
+    transition: all 0.5s ease-in 0.2s;
+  }
+  .nav-home .nav-links li:nth-child(3) {
+    -webkit-transition: all 0.5s ease-in 0.3s;
+    transition: all 0.5s ease-in 0.3s;
+  }
+  .nav-home .nav-links li.fade {
+    opacity: 1;
+  }
 }
 
 #welcome {
@@ -602,10 +714,17 @@ a {
   border-top-right-radius: 0px;
 }
 
+@media screen and (max-width: 1100px) {
+  .card .face {
+    width: 210px;
+    height: 140px;
+  }
+  .card .face.face1 .content img {
+    width: 100px;
+  }
+}
+
 @media (max-width: 700px) {
-  /* body{
-        display: none;
-    }  */
   .container .card .face {
     width: 100%;
     height: 200px;
@@ -1099,5 +1218,11 @@ a {
 
 #footer-tab .footer-right p span {
   font-family: 'Major Mono Display', monospace;
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 55%;
+  }
 }
 /*# sourceMappingURL=portfolio_page.css.map */

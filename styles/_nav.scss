@@ -124,3 +124,115 @@
 
     }
 }
+
+
+@media screen and (max-width: 600px) {
+
+    html, body{
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    .nav-home{
+        background: $base-color;
+        width: 100%;
+        top: 0;
+        position: fixed;
+        box-shadow: none;
+        z-index: 5;
+        transition: none;
+
+        nav{
+            min-height: 8vh;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+
+        .hamburger{
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 50%;
+            transform: translate(-5%, -50%);
+
+            .line{
+                width: 30px;
+                height: 3px;
+                background: black;
+                margin: 5px;
+            }
+        }
+
+        #heading{
+            font-family: 'Major Mono Display', monospace;
+            font-size: 2.4rem;
+            justify-self: self-start;
+            margin-left: 0%;
+        }
+
+        ul{
+            position: fixed;
+            top: 0;
+            background-color: $base-color;
+            margin-top: 8vh;
+            height: 93vh;
+            width: 100%;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+
+            /* Using a mask for the dropdown */
+            clip-path: circle(100px at 85% -25%);
+            -webkit-clip-path: circle(100px at 85% -25%);
+            transition: all 0.3s ease-out;
+
+            // Non clickable when closed
+            pointer-events: none;
+
+            li{
+                a{
+                    cursor: pointer;
+                    font-size: 2rem;
+                }
+            }
+
+            .active::after{
+                background: black;
+                transition: width 0.2s;
+            }
+
+        }
+
+        ul.open{
+            clip-path: circle(1000px at 85% -25%);
+            -webkit-clip-path: circle(1000px at 85% -25%);
+            z-index: 1;
+            pointer-events: all;
+        }
+
+        .nav-links li{
+            opacity: 0;
+
+            &:nth-child(1){
+                // property, time, timing, delay
+                transition: all 0.5s ease-in 0.1s;
+            }
+            &:nth-child(2){
+                transition: all 0.5s ease-in 0.2s;
+            }
+            &:nth-child(3){
+                transition: all 0.5s ease-in 0.3s;
+            }
+            &.fade{
+                opacity: 1;
+            }
+
+        }
+    }
+}

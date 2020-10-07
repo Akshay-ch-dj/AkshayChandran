@@ -1,13 +1,35 @@
-// Navbar Animation and side button animations.
+// Media query
+const mql = window.matchMedia('(max-width: 600px)');
 
+// The hamburger button animation
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 // Select all nav-links
 const navButtons = document.querySelectorAll('.nav-link');
+
+let toggleMenu = () => {
+    navLinks.classList.toggle('open');
+    navButtons.forEach(link => {
+        link.classList.toggle('fade');
+    })
+};
+
+hamburger.addEventListener('click', toggleMenu);
+
+// Navbar Animation and side button animations.
 
 // Select all side-buttons
 const sideButtons = document.querySelectorAll('.dot-link')
 
 // Click to add the highlight to nav-link
-navButtons.forEach(item => item.addEventListener('click', e => addBottomBar(e.target.parentNode)));
+navButtons.forEach(item => item.addEventListener('click', (e) => {
+    addBottomBar(e.target.parentNode)
+
+    // close the list if it is open
+    if (navLinks.classList.contains('open')) {
+        toggleMenu();
+    }
+}));
 
 function addBottomBar(navItem) {
     navButtons.forEach(item => {
@@ -55,7 +77,11 @@ const homeObserver = new IntersectionObserver(function(entries, homeObserver) {
     });
 }, homeOptions);
 
-homeObserver.observe(sectionHome);
+
+// Navbar change for only screens greater than 600px.
+if (!mql.matches) {
+    homeObserver.observe(sectionHome);
+}
 
 
 // About page, about tabs toggle active

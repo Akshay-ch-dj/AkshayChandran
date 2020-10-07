@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
 /* font-family: 'Poppins', sans-serif; */
 
-
-// ****************        project cards         ****************
 
 #projects{
     min-height: 85vh;
@@ -193,10 +190,28 @@
 
 // **************************
 
+@media screen and (max-width:1100px){
+    .card{
+
+        .face{
+            width: 210px;
+            height: 140px;
+        }
+
+        .face.face1{
+
+            .content{
+
+                img{
+                    width: 100px;
+                }
+
+            }
+        }
+    }
+}
+
 @media (max-width: 700px){
-    /* body{
-        display: none;
-    }  */
 
     .container .card .face{
         width: 100%;
@@ -204,6 +219,3 @@
     }
 
 }
-
-
-// ***************************************************************
