@@ -15,8 +15,9 @@
 - [x] Back to top button.
 - [x] Add projects title in the middle with before after lines.
 > 7/10/2020
-- [ ] Responsiveness to the project.
-- [ ] Adding the hamburger with animations.
+- [x] Adding the hamburger with animations.
+- [x] Design for mobile devices in figma.
+> 9/10/2020
 - [ ] Get it Fully supportive on mobile
 - [ ] typewriter or dynamic text change effect on welcome screen, use glitch effect, with various
   fields in a manner 1-2-3-456, 1-2-3-456
