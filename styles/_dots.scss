@@ -9,7 +9,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: transparent;
+    z-index: 10000;
 
     .dot-link{
         border: 1px solid #006842d7;
