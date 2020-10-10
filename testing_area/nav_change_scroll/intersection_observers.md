@@ -16,6 +16,8 @@ The intersection observers are used for many other things such as to change nav 
 comes in an back of a transparent nav bar, images slide in, popups at certain point, lazy loading of images.
 ### here it is used to change the navbar background when scrolling.
 
+## It is a nice read too [Things to do with intersection observers](https://css-tricks.com/a-few-functional-uses-for-intersection-observer-to-know-when-an-element-is-in-view/)
+
 * Using it with CSS variables for more clean code.
 
 (Use the `background-blend-mode: multiply;` with `background: <color> <image>;`), to get a nice dimming effect with the image)

@@ -1,12 +1,14 @@
 const btn = document.querySelector(".read-more");
 const para = document.querySelector(".text");
+const arrowBtn = document.querySelector(".arrow");
 
 // Add javascript mediaquery
 const deviceWidth = window.matchMedia("(max-width: 600px)");
 
 // event listener for button click
-btn.addEventListener("click", (e) => {
+arrowBtn.addEventListener("click", (e) => {
     para.classList.toggle('see-more');
+    arrowBtn.classList.toggle('arrow-up');
     if (para.classList.contains('see-more')){
         btn.innerHTML = "Read Less &#8593;";
     } else {

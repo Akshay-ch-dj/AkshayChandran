@@ -23,13 +23,6 @@
 
     // flex-wrap: wrap;
 
-    .row-1, .row-2 {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 95%;
-    }
-
     .project-title{
         position: absolute;
         z-index: -2;
@@ -57,9 +50,14 @@
                 color: $base-color;
             }
         }
-
     }
 
+    .row-1, .row-2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+    }
 }
 
 
@@ -101,7 +99,6 @@
                 text-align: center;
                 font-size: 1.2em;
             }
-
         }
     }
 
@@ -183,6 +180,10 @@
     }
 }
 
+.arrow span{
+    display: none;
+}
+
 // **************************
 
 @media screen and (max-width:1100px){
@@ -207,7 +208,7 @@
 
 @media screen and (max-width: 600px){
     #projects{
-        margin: 10vh 0vh;
+        margin: 5vh 0vh;
         display: grid;
         grid-template-columns: 10% 1fr 10%;
         grid-template-rows: 1fr 5%;
@@ -218,56 +219,111 @@
     .project-tile{
         grid-column: 2/3;
         grid-row: 1/2;
-        position: relative;
         border-radius: 8px;
         width: 100%;
-        padding-bottom: 5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 4% 1fr 1fr 5%;
+        // padding-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
 
-        .row-1{
-            grid-column: 1/2;
-            grid-row: 2/3;
-        }
+        .project-title{
+            position: relative;
+            width: 85%;
+            top: 0%;
+            left: 0%;
+            transform: translate(0%, 0%);
+            margin: 4rem 0rem 2rem 0rem;
 
-        .row-2{
-            grid-column: 1/2;
-            grid-row: 3/4;
+            .title-container{
+                position: relative;
+                width: 50%;
+
+                h2{
+                    font-size: calc(2vw + 1rem);
+                }
+            }
         }
 
         .row-1, .row-2 {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
         }
 
-        .project-title{
-            grid-column: 1/2;
-            grid-row: 1/2;
-            position: relative;
-            z-index: -2;
-            width: 85%;
-            height: 5px;
-            margin: 0rem 0rem;
-            align-self: start;
-            background-color: $base-color;
+        .row-2{
+            display: none;
+            transition: 0.5s;
+        }
 
-            .title-container{
-                position: relative;
-                width: 40%;
-                background: white;
+        .row-2.content-show {
+            display: flex;
+            // transition: 0.5s;
+        }
 
-                h2{
-                    text-transform: uppercase;
-                    text-align: center;
-                    font-size: calc(2vw + 1rem);
-                    font-family: 'Montserrat', sans-serif;
-                    color: $base-color;
-                }
+        // The more items arrow
+        .arrow {
+            padding: 3rem 0rem;
+            cursor: pointer;
+        }
+
+        .arrow span{
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-bottom: 3px solid  #20AA76;
+            border-right: 3px solid  #20AA76;
+            transform: rotate(45deg);
+            margin: -8px;
+        }
+
+        .arrow-down span {
+            animation: animate1 2s infinite;
+
+            &:nth-child(2) {
+                animation-delay: -0.3s;
+            }
+        }
+
+        .arrow-up span {
+            animation: animate2 2s infinite;
+
+            &:nth-child(2) {
+                animation-delay: 0.3s;
+            }
+        }
+
+        @keyframes animate1 {
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                opacity: 0;
+                transform: rotate(-135deg) translate(-5px, -5px);
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-135deg) translate(5px, 5px);
             }
         }
     }

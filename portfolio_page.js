@@ -1,5 +1,5 @@
 // Media query
-const mql = window.matchMedia('(max-width: 600px)');
+const mql = window.matchMedia('(min-width: 600px)');
 
 // The hamburger button animation
 const hamburger = document.querySelector('.hamburger');
@@ -78,11 +78,18 @@ const homeObserver = new IntersectionObserver(function(entries, homeObserver) {
 }, homeOptions);
 
 
-// Navbar change for only screens greater than 600px.
-if (!mql.matches) {
-    homeObserver.observe(sectionHome);
-}
+window.addEventListener("resize", forMobile);
 
+function forMobile() {
+    // Navbar change for only screens greater than 600px.
+    // console.log(window.innerWidth);
+    if (mql.matches) {
+        homeObserver.observe(sectionHome);
+    } else {
+        // Functions only for screens < 600px
+        homeObserver.unobserve(sectionHome);
+    }
+}
 
 // About page, about tabs toggle active
 document.getElementById("defaultOpen").click();
@@ -137,3 +144,17 @@ sectionOptions = {
 const sectionObserver = new IntersectionObserver(addMarks, sectionOptions);
 
 sectionAll.forEach(sec => sectionObserver.observe(sec));
+
+
+// More items arrow
+const secRow = document.querySelector('.row-2');
+const arrowBtn = document.querySelector(".arrow");
+
+arrowBtn.addEventListener("click", (e) => {
+    arrowBtn.classList.toggle('arrow-up');
+    if (secRow.classList.contains('content-show')){
+        secRow.classList.remove('content-show')
+    } else {
+        secRow.classList.add('content-show')
+    }
+})
