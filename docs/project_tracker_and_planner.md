@@ -18,6 +18,10 @@
 - [x] Adding the hamburger with animations.
 - [x] Design for mobile devices in figma.
 > 9/10/2020
+- [x] Home page completed
+> 10/10/2020
+- [x] Project page responsiveness.
+- [ ] Add the click to load more feature.
 - [ ] Get it Fully supportive on mobile
 - [ ] typewriter or dynamic text change effect on welcome screen, use glitch effect, with various
   fields in a manner 1-2-3-456, 1-2-3-456
