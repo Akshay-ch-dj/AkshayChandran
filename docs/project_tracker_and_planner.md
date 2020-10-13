@@ -25,3 +25,5 @@
 - [ ] Get it Fully supportive on mobile
 - [ ] typewriter or dynamic text change effect on welcome screen, use glitch effect, with various
   fields in a manner 1-2-3-456, 1-2-3-456
+- [ ] Give material ripple effects to buttons.
+-

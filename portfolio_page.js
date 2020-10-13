@@ -1,5 +1,5 @@
 // Media query
-const mql = window.matchMedia('(min-width: 600px)');
+const mql = window.matchMedia('(min-width: 768px)');
 
 // The hamburger button animation
 const hamburger = document.querySelector('.hamburger');
@@ -78,25 +78,28 @@ const homeObserver = new IntersectionObserver(function(entries, homeObserver) {
 }, homeOptions);
 
 
-window.addEventListener("resize", forMobile);
+// window.addEventListener("resize", forMobile);
 
-function forMobile() {
-    // Navbar change for only screens greater than 600px.
-    // console.log(window.innerWidth);
-    if (mql.matches) {
-        homeObserver.observe(sectionHome);
-    } else {
-        // Functions only for screens < 600px
-        homeObserver.unobserve(sectionHome);
-    }
-}
+
+homeObserver.observe(sectionHome);
+
+// function forMobile() {
+//     // Navbar change for only screens greater than 768px.
+//     // console.log(window.innerWidth);
+//     if (mql.matches) {
+//         homeObserver.observe(sectionHome);
+//     } else {
+//         // Functions only for screens < 768px
+//         homeObserver.unobserve(sectionHome);
+//     }
+// }
 
 // About page, about tabs toggle active
 document.getElementById("defaultOpen").click();
 
 function openSec(evt, sectionName) {
     // Get all elements with class="tab-content" and hide them
-    const tabContent = document.querySelectorAll(".tab-content");
+    const tabContent = document.querySelectorAll(".tab-main");
     tabContent.forEach(tab => tab.style.display = "none");
 
     // Get all elements with class="tab-links" and remove the class "active"

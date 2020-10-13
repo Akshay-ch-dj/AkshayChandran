@@ -1,5 +1,6 @@
 #welcome{
-    min-height: 80vh;
+    height: Min(80vh, 80vw);
+    min-height: 500px;
     display: grid;
     grid-template-columns: 5% 1fr 1fr 10%;
     grid-template-rows: 5% 1fr 5%;
@@ -122,9 +123,10 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     #welcome{
-        // min-height: 80vh;
+        height: 85vh;
+        min-height: 600px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
