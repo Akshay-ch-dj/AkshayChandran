@@ -1,255 +1,591 @@
-#about{
-    // height: 82vh;
-    min-height: 600px;
-    display: grid;
-    grid-template-columns: 5% 1fr 5%;
-    grid-template-rows: 5% 1fr 5%;
-    justify-items: center;
-    margin-bottom: Min(calc(5vw + 2rem), 5rem);
+// Desktop first approach(maintaining old project)
+// Main section about styling
+#about {
+  height: 75vh;
+  min-height: 600px;
+  max-height: 700px;
+  display: grid;
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-rows: 5% 1fr 5%;
+  justify-items: center;
+  margin-bottom: 5rem;
+  // margin-bottom: Min(calc(5vw + 2rem), 5rem);
 }
 
-.about-page{
-    grid-column: 2/3;
-    grid-row: 2/3;
+// About page is the container div of about section
+.about-page {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr;
+  // justify-items: center;
+  align-items: center;
+
+  // The first left section - about me
+  .about-me {
+    grid-column: 1/2;
+    grid-row: 1/2;
     width: 90%;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 1fr;
-    // justify-items: center;
+    height: 100%;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+  }
+
+  // The second right section - Contact me
+  .contact-me {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 90%;
+    height: 100%;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+  }
+}
+
+// About description
+.about-description {
+  height: 35%;
+  width: 95%;
+  align-self: center;
+  margin-top: 5%;
+  font-size: 1.8rem;
+
+  h3 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  p {
+    margin: 2rem 4rem;
+    padding: 0rem 1rem;
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+}
+
+// Separator line
+.about-description::after {
+  content: '';
+  display: block;
+  width: 83%;
+  height: 4px;
+  background: $base-color;
+  border-radius: 4px;
+  margin: auto;
+}
+
+// The information interactive div (toggling buttons for skill, exp education)
+.about-info {
+  height: 50%;
+  min-height: 300px;
+  width: 80%;
+  align-self: center;
+  font-size: 1.8rem;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  // Button container div
+  .about-tabs {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    // Style the buttons that are used to open the tab content
+    button {
+      background-color: #448b7010;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0.6em 1em;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      margin: 0 auto;
+      transition: 0.3s;
+    }
+
+    .tab-links + .tab-links {
+      margin-left: 1%;
+    }
+
+    // Change background color of buttons on hover
+    button:hover {
+      background-color: #20aa7563;
+      color: #f1f1f1;
+    }
+
+    // Create an active/current tab-link class
+    button.active {
+      background-color: #20aa76;
+      color: #f1f1f1;
+    }
+
+    // Style the tab main (the outer box of skills tab to none- default state)
+    // Controlled by JS
+    .tab-main {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+      animation: fadeEffect 500ms; /* Fading effect takes 500 ms */
+    }
+
+    /* Go from zero to full opacity */
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  // The skill items arrangement using flexbox and grid
+  .tab-main {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 
-    .about-me{
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: 90%;
-        height: 100%;
-        justify-self: start;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 50px;
+    .tab-content {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      font-size: 1.7rem;
+      margin: 2rem 1rem;
+      justify-items: start;
     }
 
-    .contact-me{
-        grid-column: 2/3;
-        grid-row: 1/2;
-        width: 90%;
-        height: 100%;
-        justify-self: end;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 50px;
-    }
-}
-
-.about-description{
-    height: 35%;
-    width: 95%;
-    align-self: center;
-    margin-top: 5%;
-    font-size: 1.8rem;
-
-    h3{
-        font-size: 2.2rem;
-        text-align: center;
+    .m-text {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      font-weight: 600;
     }
 
-    p{
-        margin: 2rem 4rem;
-        padding: 0rem 1rem;
-        text-align: justify;
-        font-size: 1.6rem;
-        line-height: 2.5rem;
-    }
-}
-
-.about-description::after{
-    content: '';
-    display: block;
-    width: 83%;
-    height: 4px;
-    background: $base-color;
-    border-radius: 4px;
-    margin: auto;
-}
-
-.about-info{
-    height: 50%;
-    min-height: 300px;
-    width: 80%;
-    align-self: center;
-    font-size: 1.8rem;
-    position: relative;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-
-    .about-tabs {
-        overflow: hidden;
-
-        /* Style the buttons that are used to open the tab content */
-        button {
-            background-color:  #20aa7510;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 1vh 1vw;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            border-radius: 8px;
-            margin-right: 1vh;
-            transition: 0.3s;
-        }
-
-        /* Change background color of buttons on hover */
-        button:hover{
-            background-color: #20aa7563;
-            color: #f1f1f1;
-        }
-
-        /* Create an active/current tab-link class */
-        button.active {
-            background-color: #20AA76;
-            color: #f1f1f1;
-        }
-
-        /* Style the tab content */
-        .tab-main {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-            animation: fadeEffect 500ms; /* Fading effect takes 1 second */
-        }
-
-        /* Go from zero to full opacity */
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
+    .opt--1 {
+      grid-column: 2/3;
+      grid-row: 1/2;
     }
 
-
-    .tab-main{
-        margin-top: 2rem;
-
-        .tab-content{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-size: 1.7rem;
-            margin: 2rem 1rem;
-
-            .m-text{
-                font-weight: 600;
-                margin-right: 5rem;
-            }
-        }
-
+    .opt--2 {
+      grid-column: 3/4;
+      grid-row: 1/2;
     }
+  }
 
-    #Experience{
-        margin: 4rem 3.5rem;
+  #Experience {
+    margin: 4rem 3.5rem;
 
-        .exp-list{
-            list-style: none;
+    .exp-list {
+      list-style: none;
 
-            li{
-                margin: 2rem 0rem;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.5rem;
-                line-height: 2.6rem;
+      li {
+        margin: 2rem 0rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        line-height: 2.6rem;
 
-                a{
-                    color: rgb(5, 92, 31);
-                }
-
-                a:hover,
-                a:focus,
-                a:active{
-                    color: $base-color;
-                }
-
-                span{
-                    font-weight: 600;
-                }
-            }
-
-            li::before{
-                content: "";  // bullet
-                height: 1rem;
-                width: 1rem;
-                border-radius: 50%;
-                border:solid 2px black;
-                background: $base-color;
-                display: inline-block;
-                margin: 0rem 1rem 0rem -2rem;
-            }
-        }
-    }
-
-    #Education{
-        margin: 4rem 4rem;
-
-        p{
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            line-height: 2.6rem;
-        }
-
-        p::before{
-            content: "";
-            height: 1rem;
-            width: 1rem;
-            border-radius: 50%;
-            border:solid 2px black;
-            background: $base-color;
-            display: inline-block;
-            margin: 0rem 1rem 0rem -2rem;
-        }
-
-        a{
-            color: rgb(5, 92, 31);
+        a {
+          color: rgb(5, 92, 31);
         }
 
         a:hover,
         a:focus,
-        a:active{
-            color: $base-color;
+        a:active {
+          color: $base-color;
         }
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      li::before {
+        content: ''; // bullet
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        border: solid 2px black;
+        background: $base-color;
+        display: inline-block;
+        margin: 0rem 1rem 0rem -2rem;
+      }
     }
+  }
+
+  #Education {
+    margin: 4rem 4rem;
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+    }
+
+    p::before {
+      content: '';
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      border: solid 2px black;
+      background: $base-color;
+      display: inline-block;
+      margin: 0rem 1rem 0rem -2rem;
+    }
+
+    a {
+      color: rgb(5, 92, 31);
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      color: $base-color;
+    }
+  }
 }
 
-
-.contact-head{
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 8%;
+.contact-head {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 8%;
 }
 
-#contact-form{
-    width: 95%;
-    height: 90%;
-    margin-top: 1rem;
-    padding: 2.5rem 0.625rem;
+#contact-form {
+  width: 95%;
+  height: 90%;
+  margin-top: 1rem;
+  padding: 2.5rem 0.625rem;
+  position: relative;
+
+  label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1rem;
+  }
+
+  .form-field {
+    margin: 1rem auto 3rem auto;
+    padding: 0.25rem;
+  }
+
+  .form-input {
+    display: inline-block;
+    width: 65%;
+    height: 3.2rem;
+    padding: 0.375rem 0.75rem;
+    color: black;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .form-input:focus {
+    border-color: $base-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  }
+
+  #name {
+    margin-left: 10%;
+  }
+
+  #email {
+    margin-left: 11%;
+  }
+
+  #text-label {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-40%);
+  }
+
+  #text-input {
+    min-height: 140px;
+    width: 65%;
+    margin: 0% 0% 10% 27%;
+    padding: 0.625rem;
+    resize: vertical;
+  }
+
+  .submit-button {
+    display: block;
+    position: absolute;
+    width: 44%;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    padding: 0.75rem;
+    background: $base-color;
+    color: #f1f1f1;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    outline: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Bottom back button
+.btn-top {
+  position: absolute;
+  top: 88%;
+  left: 96%;
+  transform: translate(-96%, -88%);
+  width: 4rem;
+  height: 4rem;
+  background: $base-color;
+  border-radius: 50%;
+  display: none;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  transition: background 1s linear;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+
+  .btn-img {
+    a {
+      text-decoration: none;
+      color: #f1f1f1;
+      i {
+        font-size: 2.3rem;
+      }
+    }
+  }
+}
+
+.btn-top:active {
+  box-shadow: none;
+}
+
+// Tab size queries
+
+@media screen and (max-width: 900px) {
+  #about {
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 1fr 5%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .about-page {
+    grid-row: 1/2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .about-me {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 50px;
+    }
+
+    .contact-me {
+      width: 100%;
+      height: 100%;
+      margin: 4rem 0rem;
+      border-radius: 50px;
+    }
+  }
+
+  .about-description {
+    height: auto;
+    width: 100%;
+    padding: 1rem 2rem;
     position: relative;
 
-    label{
+    p {
+      margin: 2rem;
+      line-height: 3rem;
+      text-align: justify;
+      font-size: 1.6rem;
+    }
+  }
+
+  .about-description::after {
+    position: relative;
+    width: 91%;
+    margin: 0 auto;
+  }
+
+  .about-info {
+    margin: 1rem auto;
+
+    .about-tabs {
+      /* Style the buttons that are used to open the tab content */
+      button {
+        font-size: 1.6rem;
+      }
+
+      #Skills {
+        margin-top: 1rem;
+
+        p {
+          font-size: calc(1vw + 1rem);
+          margin: 2rem 1rem;
+
+          .m-text {
+            font-weight: 600;
+          }
+
+          i {
+            margin-left: 0rem;
+          }
+
+          .iconify {
+            margin-left: rem;
+          }
+        }
+
+        .languages {
+          .opt {
+            margin-left: 4rem;
+          }
+        }
+
+        .frameworks {
+          .opt {
+            margin-left: 2.8rem;
+          }
+        }
+
+        .design_tools {
+          .opt {
+            margin-left: 2.7rem;
+          }
+        }
+
+        .dev_tools {
+          .opt {
+            margin-left: 5rem;
+          }
+        }
+      }
+
+      #Experience {
+        margin: 4rem 3.5rem;
+
+        .exp-list {
+          list-style: none;
+
+          li {
+            margin: 2rem 0rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            line-height: 2.6rem;
+
+            a {
+              color: rgb(5, 92, 31);
+            }
+
+            a:hover,
+            a:focus,
+            a:active {
+              color: $base-color;
+            }
+
+            span {
+              font-weight: 600;
+            }
+          }
+
+          li::before {
+            content: ''; // bullet
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            border: solid 2px black;
+            background: $base-color;
+            display: inline-block;
+            margin: 0rem 1rem 0rem -2rem;
+          }
+        }
+      }
+
+      #Education {
+        margin: 4rem 4rem;
+
+        p {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;
+          line-height: 2.6rem;
+        }
+
+        p::before {
+          content: '';
+          height: 1rem;
+          width: 1rem;
+          border-radius: 50%;
+          border: solid 2px black;
+          background: $base-color;
+          display: inline-block;
+          margin: 0rem 1rem 0rem -2rem;
+        }
+
+        a {
+          color: rgb(5, 92, 31);
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+          color: $base-color;
+        }
+      }
+    }
+
+    .contact-head {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 8%;
+    }
+
+    #contact-form {
+      width: 95%;
+      height: 90%;
+      margin-top: 1rem;
+      padding: 2.5rem 0.625rem;
+      position: relative;
+
+      label {
         font-size: 1.6rem;
         font-weight: 600;
         margin-left: 1rem;
-    }
+      }
 
-    .form-field {
+      .form-field {
         margin: 1rem auto 3rem auto;
         padding: 0.25rem;
-    }
+      }
 
-    .form-input{
+      .form-input {
         display: inline-block;
         width: 65%;
         height: 3.2rem;
@@ -260,37 +596,37 @@
         border: 2px solid #ced4da;
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
+      }
 
-    .form-input:focus {
+      .form-input:focus {
         border-color: $base-color;
         outline: 0;
         box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
-    }
+      }
 
-    #name{
+      #name {
         margin-left: 10%;
-    }
+      }
 
-    #email{
+      #email {
         margin-left: 11%;
-    }
+      }
 
-    #text-label{
+      #text-label {
         position: absolute;
         top: 42%;
         transform: translateY(-40%);
-    }
+      }
 
-    #text-input {
+      #text-input {
         min-height: 140px;
         width: 65%;
         margin: 0% 0% 10% 27%;
         padding: 0.625rem;
         resize: vertical;
-    }
+      }
 
-    .submit-button {
+      .submit-button {
         display: block;
         position: absolute;
         width: 44%;
@@ -305,470 +641,45 @@
         border: none;
         outline: rgba(0, 0, 0, 0.5);
         box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
-    }
-}
-
-// Bottom back button
-.btn-top{
-    position: absolute;
-    top: 88%;
-    left: 96%;
-    transform: translate(-96%, -88%);
-    width: 4rem;
-    height: 4rem;
-    background: $base-color;
-    border-radius: 50%;
-    display: none;
-    // display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: fixed;
-    transition: background 1s linear;
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-
-    .btn-img{
-
-        a{
-            text-decoration: none;
-            color: #f1f1f1;
-            i{
-                font-size: 2.3rem;
-            }
-        }
-    }
-}
-
-.btn-top:active{
-    box-shadow: none;
-}
-
-
-@media (max-width: 1000px) {
-    .tab-main{
-        margin-top: 2rem;
-
-        .tab-content{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-
-        p{
-            font-size: 1.5rem;
-            margin: 0rem;
-
-            .m-text{
-                font-weight: 600;
-            }
-
-            i{
-                margin-left: 0rem;
-            }
-
-            .iconify{
-                margin-left: 0rem;
-            }
-        }
-
-        .languages{
-            .opt{
-                margin-left: 0rem;
-            }
-        }
-
-        .frameworks{
-            .opt{
-                margin-left: 0rem;
-            }
-        }
-
-        .design_tools{
-            .opt{
-                margin-left: 0rem;
-            }
-        }
-
-        .dev_tools{
-            .opt{
-                margin-left: 0rem;
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-
-    #about{
-        display: grid;
-        grid-template-columns: 10% 1fr 10%;
-        grid-template-rows: 1fr 5%;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .about-page{
-        grid-column: 2/3;
-        grid-row: 1/2;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-
-        .about-me{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .contact-me{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            margin: 4rem 0rem;
-            box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-    }
-
-    .about-description{
-        height: auto;
-        width: 100%;
-        margin-top: 5%;
-        position: relative;
-
-        h3{
-            font-size: calc(2.5vw + 1rem);
-        }
-
-        p{
-            margin: 2rem;
-            padding: 0rem;
-            text-align: justify;
-            font-size: calc(1.5vw + 0.8rem);
-        }
-    }
-
-    .about-description::after{
-        content: '';
-        display: block;
-        width: 83%;
-        height: 4px;
-        background: $base-color;
-        border-radius: 4px;
-        position: relative;
-        // top: 105%;
-        top: 0%;
-        left: 0%;
-        transform: translate(0%, 0%);
-        margin-left: 3rem;
-    }
-
-    .about-info{
-        height: 70%;
-        width: 80%;
-        align-self: center;
-        font-size: 1.8rem;
-        position: relative;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-
-        .about-tabs {
-            overflow: hidden;
-
-            /* Style the buttons that are used to open the tab content */
-            button {
-                background-color:  #20aa7510;
-                float: left;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 1vh 1vw;
-                font-family: 'Poppins', sans-serif;
-                font-size: 1.5rem;
-                border-radius: 8px;
-                margin-right: 1vh;
-                transition: 0.3s;
-            }
-
-            /* Change background color of buttons on hover */
-            button:hover{
-                background-color: #20aa7563;
-                color: #f1f1f1;
-            }
-
-            /* Create an active/current tab-link class */
-            button.active {
-                background-color: #20AA76;
-                color: #f1f1f1;
-            }
-
-            /* Style the tab content */
-            .tab-main {
-                display: none;
-                padding: 6px 12px;
-                border: 1px solid #ccc;
-                border-top: none;
-                animation: fadeEffect 500ms; /* Fading effect takes 1 second */
-            }
-
-            /* Go from zero to full opacity */
-            @keyframes fadeEffect {
-                from {opacity: 0;}
-                to {opacity: 1;}
-            }
-        }
-
-        #Skills{
-            margin-top: 1rem;
-
-            p{
-                font-size: calc(1vw + 1rem);
-                margin: 2rem 1rem;
-
-                .m-text{
-                    font-weight: 600;
-                }
-
-                i{
-                    margin-left: 0rem;
-                }
-
-                .iconify{
-                    margin-left: rem;
-                }
-            }
-
-            .languages{
-                .opt{
-                    margin-left: 4rem;
-                }
-            }
-
-            .frameworks{
-                .opt{
-                    margin-left: 2.8rem;
-                }
-            }
-
-            .design_tools{
-                .opt{
-                    margin-left: 2.7rem;
-                }
-            }
-
-            .dev_tools{
-                .opt{
-                    margin-left: 5rem;
-                }
-            }
-
-        }
-
-        #Experience{
-            margin: 4rem 3.5rem;
-
-            .exp-list{
-                list-style: none;
-
-                li{
-                    margin: 2rem 0rem;
-                    font-family: 'Montserrat', sans-serif;
-                    font-size: 1.5rem;
-                    line-height: 2.6rem;
-
-                    a{
-                        color: rgb(5, 92, 31);
-                    }
-
-                    a:hover,
-                    a:focus,
-                    a:active{
-                        color: $base-color;
-                    }
-
-                    span{
-                        font-weight: 600;
-                    }
-                }
-
-                li::before{
-                    content: "";  // bullet
-                    height: 1rem;
-                    width: 1rem;
-                    border-radius: 50%;
-                    border:solid 2px black;
-                    background: $base-color;
-                    display: inline-block;
-                    margin: 0rem 1rem 0rem -2rem;
-                }
-
-            }
-        }
-
-        #Education{
-            margin: 4rem 4rem;
-
-            p{
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.5rem;
-                line-height: 2.6rem;
-            }
-
-            p::before{
-                content: "";
-                height: 1rem;
-                width: 1rem;
-                border-radius: 50%;
-                border:solid 2px black;
-                background: $base-color;
-                display: inline-block;
-                margin: 0rem 1rem 0rem -2rem;
-            }
-
-            a{
-                color: rgb(5, 92, 31);
-            }
-
-            a:hover,
-            a:focus,
-            a:active{
-                color: $base-color;
-            }
-
-        }
-    }
-
-    .contact-head{
-        font-size: 2rem;
-        text-align: center;
-        margin-top: 8%;
-    }
-
-    #contact-form{
-        width: 95%;
-        height: 90%;
-        margin-top: 1rem;
-        padding: 2.5rem 0.625rem;
-        position: relative;
-
-        label{
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-left: 1rem;
-        }
-
-        .form-field {
-            margin: 1rem auto 3rem auto;
-            padding: 0.25rem;
-        }
-
-        .form-input{
-            display: inline-block;
-            width: 65%;
-            height: 3.2rem;
-            padding: 0.375rem 0.75rem;
-            color: black;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 2px solid #ced4da;
-            border-radius: 0.5rem;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
-
-        .form-input:focus {
-            border-color: $base-color;
-            outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
-        }
-
-        #name{
-            margin-left: 10%;
-        }
-
-        #email{
-            margin-left: 11%;
-        }
-
-        #text-label{
-            position: absolute;
-            top: 42%;
-            transform: translateY(-40%);
-        }
-
-        #text-input {
-            min-height: 140px;
-            width: 65%;
-            margin: 0% 0% 10% 27%;
-            padding: 0.625rem;
-            resize: vertical;
-        }
-
-        .submit-button {
-            display: block;
-            position: absolute;
-            width: 44%;
-            top: 90%;
-            left: 50%;
-            transform: translate(-50%, -90%);
-            padding: 0.75rem;
-            background: $base-color;
-            color: #f1f1f1;
-            border-radius: 8px;
-            cursor: pointer;
-            border: none;
-            outline: rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
-        }
+      }
     }
 
     // Bottom back button
-    .btn-top{
-        position: absolute;
-        top: 88%;
-        left: 96%;
-        transform: translate(-96%, -88%);
-        width: 4rem;
-        height: 4rem;
-        background: $base-color;
-        border-radius: 50%;
-        display: none;
-        // display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        position: fixed;
-        transition: background 1s linear;
-        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    .btn-top {
+      position: absolute;
+      top: 88%;
+      left: 96%;
+      transform: translate(-96%, -88%);
+      width: 4rem;
+      height: 4rem;
+      background: $base-color;
+      border-radius: 50%;
+      display: none;
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: fixed;
+      transition: background 1s linear;
+      box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 
-        .btn-img{
-
-            a{
-                text-decoration: none;
-                color: #f1f1f1;
-                i{
-                    font-size: 2.3rem;
-                }
-            }
+      .btn-img {
+        a {
+          text-decoration: none;
+          color: #f1f1f1;
+          i {
+            font-size: 2.3rem;
+          }
         }
+      }
     }
-}
+  }
 
-
-@media screen and (max-width: 400px) {
-    .tab-content{
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+  @media screen and (max-width: 600px) {
+    .tab-content {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
+  }
 }

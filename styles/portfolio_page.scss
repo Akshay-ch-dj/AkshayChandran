@@ -1,7 +1,7 @@
-html{
-    // Set to 10px
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+html {
+  // Set to 10px
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 // font-family: 'Montserrat', sans-serif;
@@ -9,19 +9,20 @@ html{
 // font-family: 'Major Mono Display', monospace;
 // font-family: 'Lobster', cursive;
 
+$base-color: #20aa76;
 
-$base-color: #20AA76;
-
-*, ::before, ::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    color:black;
-    font-family: 'Montserrat', sans-serif;
-    // overflow: hidden;
+body {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  // overflow: hidden;
 }
 
 // .parent-container{
@@ -32,30 +33,35 @@ body{
 //     scroll-snap-type: y mandatory;
 // }
 
-section{
-    scroll-snap-align: start;
+section {
+  scroll-snap-align: start;
 }
 
-h1{
-    font-size: 2.5rem;
-    font-weight: bolder;
+h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
 
-p{
-    font-size: 1.4rem;
+p {
+  font-size: 1.4rem;
 }
 
-i{
-    font-size: 1.5rem;
+i {
+  font-size: 1.5rem;
 }
 
-li{
-    font-size: 1.6rem;
+li {
+  font-size: 1.6rem;
 }
 
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 @import 'nav';
