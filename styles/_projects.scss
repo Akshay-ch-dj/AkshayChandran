@@ -1,7 +1,7 @@
 #projects {
   min-height: 650px;
   font-family: 'Montserrat', sans-serif;
-  margin: 4rem 0;
+  margin: 4rem auto;
   display: grid;
   grid-template-columns: 5% 1fr 5%;
   grid-template-rows: 5% 1fr 5%;
@@ -108,17 +108,21 @@
   .face.face2 {
     position: relative;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0rem 1.5rem 1rem;
     border-radius: 10px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 
     .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      // align-items: center;
+
       p {
         margin: 0;
-        padding: 0;
+        padding: 0 1rem;
+        font-size: 1.4rem;
         text-align: center;
       }
 
@@ -142,7 +146,7 @@
     .view-links {
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem 1rem;
+      padding: 1rem 2rem;
     }
   }
 }
@@ -160,10 +164,6 @@
     transform: translateY(0px);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-
-    img {
-      // transform: scale(1.2, 1.2);
-    }
   }
 
   .card .face.face1 .content {
@@ -197,18 +197,21 @@
 // **************************
 
 @media screen and (max-width: 1100px) {
-  .card {
-    .face {
-      width: 210px;
-      height: 140px;
+  .project-tile {
+    flex-direction: row;
+    padding-bottom: 4rem;
+
+    .project-title {
+      top: 8%;
+      left: 50%;
+      transform: translate(-50%, -8%);
+      width: 76%;
     }
 
-    .face.face1 {
-      .content {
-        img {
-          width: 100px;
-        }
-      }
+    .row-1,
+    .row-2 {
+      margin-top: 12rem;
+      flex-direction: column;
     }
   }
 }
@@ -233,6 +236,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 0;
 
     .project-title {
       position: relative;
@@ -254,10 +258,8 @@
 
     .row-1,
     .row-2 {
-      display: flex;
-      flex-direction: column;
+      margin-top: 0;
       justify-content: flex-start;
-      align-items: center;
       width: 100%;
     }
 
