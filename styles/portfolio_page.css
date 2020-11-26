@@ -206,7 +206,7 @@ a {
     position: fixed;
     -webkit-box-shadow: none;
             box-shadow: none;
-    z-index: 5;
+    z-index: 10000;
     -webkit-transition: none;
     transition: none;
   }
@@ -315,8 +315,7 @@ a {
 }
 
 #welcome {
-  height: Min(80vh, 80vw);
-  min-height: 500px;
+  min-height: 560px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5% 1fr 1fr 10%;
@@ -359,9 +358,12 @@ a {
 
 #welcome .pf-card .pf-photo {
   border-radius: 50%;
+  margin-top: 2rem;
   overflow: hidden;
-  width: 14vw;
-  height: 14vw;
+  width: 12vw;
+  height: 12vw;
+  max-width: 220px;
+  max-height: 220px;
   position: relative;
 }
 
@@ -390,27 +392,27 @@ a {
 }
 
 #welcome .pf-card .card-info-fluid h3 {
-  font-size: calc(1vw + 1rem);
+  font-size: 2rem;
 }
 
 #welcome .pf-card .card-info-fluid p {
-  font-size: calc(0.6vw + 0.8rem);
+  font-size: 1.6rem;
 }
 
 #welcome .pf-card .card-info-fluid .pf-location i {
-  font-size: calc(1vw + 0.8rem);
+  font-size: 2rem;
 }
 
 #welcome .pf-card .card-info-fluid .pf-email {
-  margin-bottom: calc(2vh + 1rem);
+  margin-bottom: 3rem;
 }
 
 #welcome .pf-card .card-info-fluid .pf-email i {
-  font-size: calc(1vw + 0.8rem);
+  font-size: 1.6rem;
 }
 
 #welcome .pf-card .card-info-fluid .pf-contact-icons i {
-  font-size: calc(1.5vw + 1rem);
+  font-size: 3rem;
   margin: 1rem;
   color: white;
 }
@@ -462,13 +464,13 @@ a {
 }
 
 #welcome .wel-note .wel-btn {
-  width: 60%;
+  width: 50%;
   color: white;
   background: radial-gradient(#20aa76 80%, #20aa75c2);
   border: none;
   outline: none;
   border-radius: 10px;
-  padding: 1em 0.5em;
+  padding: 0.6em 0.5em;
   font-size: calc(0.6vw + 1rem);
   cursor: pointer;
   -webkit-box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.1);
@@ -480,10 +482,38 @@ a {
           box-shadow: none;
 }
 
+@media screen and (max-width: 900px) {
+  #welcome {
+    min-height: 450px;
+  }
+  #welcome .pf-card .pf-photo {
+    width: 10vw;
+    height: 10vw;
+  }
+  #welcome .pf-card .card-info-fluid h3 {
+    font-size: 1.7rem;
+  }
+  #welcome .pf-card .card-info-fluid p {
+    font-size: 1.2rem;
+  }
+  #welcome .pf-card .card-info-fluid .pf-location i {
+    font-size: 1.8rem;
+  }
+  #welcome .pf-card .card-info-fluid .pf-email {
+    margin-bottom: 2rem;
+  }
+  #welcome .pf-card .card-info-fluid .pf-email i {
+    font-size: 1.4rem;
+  }
+  #welcome .pf-card .card-info-fluid .pf-contact-icons i {
+    font-size: 2.5rem;
+    margin: 1rem;
+    color: white;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #welcome {
-    height: 85vh;
-    min-height: 600px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -529,12 +559,6 @@ a {
     height: 28vw;
     position: relative;
     margin: 1rem 0rem 0rem 1rem;
-  }
-  #welcome .pf-card .pf-photo img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    margin: auto;
   }
   #welcome .pf-card .card-info-fluid {
     -ms-grid-row: 2;
@@ -642,6 +666,13 @@ a {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  #welcome .pf-photo {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
 .side-dots {
   position: fixed;
   top: 50%;
@@ -664,7 +695,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   background: transparent;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .side-dots .dot-link {
@@ -714,9 +745,9 @@ a {
 }
 
 #projects {
-  min-height: Min(80vh, 80vw);
+  min-height: 650px;
   font-family: 'Montserrat', sans-serif;
-  margin: 5vh 0vh 10vh 0vh;
+  margin: 4rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5% 1fr 5%;
@@ -735,8 +766,9 @@ a {
   grid-row: 2/3;
   position: relative;
   border-radius: 50px;
+  padding-top: 4rem;
   width: 90%;
-  min-height: Min(80vh, 80vw);
+  min-height: 600px;
   -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
   display: -webkit-box;
@@ -757,10 +789,10 @@ a {
 .project-tile .project-title {
   position: absolute;
   z-index: -2;
-  top: 45%;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -45%);
-          transform: translate(-50%, -45%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 85%;
   height: 0.5rem;
   background-color: #20aa76;
@@ -768,10 +800,10 @@ a {
 
 .project-tile .project-title .title-container {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -45%);
-          transform: translate(-50%, -45%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 40%;
   background: white;
 }
@@ -784,7 +816,8 @@ a {
   color: #20aa76;
 }
 
-.project-tile .row-1, .project-tile .row-2 {
+.project-tile .row-1,
+.project-tile .row-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -823,15 +856,21 @@ a {
   z-index: 1;
 }
 
+.card .face.face1 .content {
+  padding: 3rem;
+}
+
 .card .face.face1 .content img {
-  width: 120px;
+  display: block;
+  width: 85%;
   height: auto;
+  margin: 0 auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .card .face.face1 .content h3 {
-  margin: .5rem 0 0;
+  margin: 0.5rem 0 0;
   padding: 0;
   color: black;
   text-align: center;
@@ -850,7 +889,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem;
+  padding: 0rem 1.5rem 1rem;
   border-radius: 10px;
   -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
@@ -859,6 +898,7 @@ a {
 .card .face.face2 .content p {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .card .face.face2 .content a {
@@ -867,7 +907,7 @@ a {
   text-decoration: none;
   font-weight: 900;
   color: #333;
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem;
   border: 1px solid #333;
 }
 
@@ -877,40 +917,50 @@ a {
   color: #fff;
 }
 
-.container .card .face.face1 {
+.card .face.face2 .view-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.proj-container .card .face.face1 {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
 }
 
-.container .card:hover .face.face1,
-.container .card:focus .face.face1,
-.container .card:active .face.face1 {
+.proj-container .card:hover .face.face1,
+.proj-container .card:focus .face.face1,
+.proj-container .card:active .face.face1 {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 
-.container .card .face.face1 .content {
+.proj-container .card .face.face1 .content {
   opacity: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.container .card:hover .face.face1 .content,
-.container .card:focus .face.face1 .content,
-.container .card:active .face.face1 .content {
-  opacity: 0.2;
+.proj-container .card:hover .face.face1 .content,
+.proj-container .card:focus .face.face1 .content,
+.proj-container .card:active .face.face1 .content {
+  opacity: 0.4;
 }
 
-.container .card .face.face2 {
+.proj-container .card .face.face2 {
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
 }
 
-.container .card:hover .face.face2,
-.container .card:focus .face.face2,
-.container .card:active .face.face2 {
+.proj-container .card:hover .face.face2,
+.proj-container .card:focus .face.face2,
+.proj-container .card:active .face.face2 {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
   border-top-left-radius: 0px;
@@ -984,7 +1034,8 @@ a {
   .project-tile .project-title .title-container h2 {
     font-size: calc(2vw + 1rem);
   }
-  .project-tile .row-1, .project-tile .row-2 {
+  .project-tile .row-1,
+  .project-tile .row-2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1018,8 +1069,8 @@ a {
     display: block;
     width: 20px;
     height: 20px;
-    border-bottom: 3px solid  #20AA76;
-    border-right: 3px solid  #20AA76;
+    border-bottom: 3px solid #20aa76;
+    border-right: 3px solid #20aa76;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     margin: -8px;
@@ -1609,12 +1660,13 @@ a {
   }
   .about-page .about-me {
     width: 100%;
+    border-radius: 15px;
   }
   .about-page .contact-me {
     width: 100%;
     height: 100%;
     margin: 4rem 0rem;
-    border-radius: 50px;
+    border-radius: 15px;
   }
   .about-description {
     height: auto;

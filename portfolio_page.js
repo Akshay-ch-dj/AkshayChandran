@@ -65,7 +65,7 @@ const homeOptions = {
 };
 
 // Add fixed navbar when scrolling down
-const homeObserver = new IntersectionObserver(((entries, homeObserver) => {
+const homeObserver = new IntersectionObserver(((entries, homeObs) => {
   entries.forEach((entry) => {
     // if not on observing section
     if (!entry.isIntersecting) {
@@ -99,6 +99,7 @@ const addMarks = (entries) => {
       addHighlight(buttonItem);
 
       const backButton = document.querySelector('.btn-top');
+
       if (activeItem === 'about') {
         backButton.style.display = 'flex';
       } else {
