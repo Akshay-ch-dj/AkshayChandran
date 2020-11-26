@@ -1,19 +1,28 @@
-#footer-tab {
+#footer {
   width: 100%;
   height: 8vh;
   min-height: 4rem;
+  max-height: 6rem;
   background: $base-color;
   margin-top: 2rem;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-tab {
+  width: 80%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
-  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+
+  p {
+    font-size: 1.5rem;
+  }
 
   .footer-left {
     width: 80px;
-    font-size: 1.6rem;
-    margin-left: 5rem;
 
     .copyright {
       font-size: 2rem;
@@ -39,13 +48,34 @@
   .footer-right {
     width: 50%;
     text-align: end;
-    font-size: 1.5rem;
-    margin-right: 5rem;
 
     p {
       span {
         font-family: 'Major Mono Display', monospace;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #footer {
+    height: 6vh;
+    min-height: 3rem;
+    margin-top: 0;
+  }
+  .footer-tab {
+    p {
+      font-size: 1.4rem;
+    }
+    .icons {
+      margin-right: 0;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer-tab {
+    p {
+      font-size: 1.2rem;
     }
   }
 }

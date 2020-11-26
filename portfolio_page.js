@@ -64,6 +64,7 @@ const homeOptions = {
   rootMargin: '-200px 0px 0px 0px',
 };
 
+// Add fixed navbar when scrolling down
 const homeObserver = new IntersectionObserver(((entries, homeObserver) => {
   entries.forEach((entry) => {
     // if not on observing section
@@ -143,6 +144,7 @@ arrowBtn.addEventListener('click', (e) => {
 // About page, about tabs toggle active
 document.getElementById('defaultOpen').click();
 
+// through button onclick from html
 function openSec(evt, sectionName) {
   // Get all elements with class="tab-content" and hide them
   const tabContent = document.querySelectorAll('.tab-main');

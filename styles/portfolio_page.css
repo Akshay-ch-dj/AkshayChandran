@@ -52,6 +52,7 @@ a {
 .nav-home nav {
   height: 15vh;
   min-height: 6rem;
+  max-height: 10rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5% 1fr 1fr 10%;
@@ -145,7 +146,6 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1800px;
   z-index: 2;
   -webkit-transition: background 250ms ease-in;
   transition: background 250ms ease-in;
@@ -155,7 +155,7 @@ a {
 
 .nav-container nav {
   height: 8vh;
-  min-height: 4rem;
+  min-height: 5rem;
   display: -ms-grid;
   display: grid;
 }
@@ -1725,12 +1725,20 @@ a {
   }
 }
 
-#footer-tab {
+#footer {
   width: 100%;
   height: 8vh;
   min-height: 4rem;
+  max-height: 6rem;
   background: #20aa76;
   margin-top: 2rem;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-tab {
+  width: 80%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1741,45 +1749,64 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 700;
-  -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
 }
 
-#footer-tab .footer-left {
+.footer-tab p {
+  font-size: 1.5rem;
+}
+
+.footer-tab .footer-left {
   width: 80px;
-  font-size: 1.6rem;
-  margin-left: 5rem;
 }
 
-#footer-tab .footer-left .copyright {
+.footer-tab .footer-left .copyright {
   font-size: 2rem;
 }
 
-#footer-tab .icons {
+.footer-tab .icons {
   text-align: start;
   width: 30%;
   margin-right: 20%;
   margin-top: 4px;
 }
 
-#footer-tab .icons i {
+.footer-tab .icons i {
   margin: 0px 5px;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
 }
 
-#footer-tab .icons i:hover {
+.footer-tab .icons i:hover {
   color: #0f6580;
 }
 
-#footer-tab .footer-right {
+.footer-tab .footer-right {
   width: 50%;
   text-align: end;
-  font-size: 1.5rem;
-  margin-right: 5rem;
 }
 
-#footer-tab .footer-right p span {
+.footer-tab .footer-right p span {
   font-family: 'Major Mono Display', monospace;
+}
+
+@media screen and (max-width: 900px) {
+  #footer {
+    height: 6vh;
+    min-height: 3rem;
+    margin-top: 0;
+  }
+  .footer-tab p {
+    font-size: 1.4rem;
+  }
+  .footer-tab .icons {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer-tab p {
+    font-size: 1.2rem;
+  }
 }
 /*# sourceMappingURL=portfolio_page.css.map */
