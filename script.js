@@ -1,5 +1,5 @@
 // Media query
-const mql = window.matchMedia('(min-width: 768px)');
+// const mql = window.matchMedia('(min-width: 768px)');
 
 // ******************  Navbar JS *************************
 
@@ -159,3 +159,51 @@ function openSec(evt, sectionName) {
   document.getElementById(sectionName).style.display = 'block';
   evt.target.classList.add('active');
 }
+
+// contact form thankyou field
+
+window.addEventListener('DOMContentLoaded', () => {
+  // get the form elements defined in your form HTML above
+
+  const form = document.getElementById('contact-form');
+  const button = document.getElementById('submit');
+  const status = document.getElementById('form-status');
+
+  // Success and Error functions for after the form is submitted
+
+  function formSuccess() {
+    form.reset();
+    button.disabled = true;
+    status.innerHTML = 'Thanks!, I will contact you soon';
+  }
+
+  function formError() {
+    status.innerHTML = 'Oops! There was a problem.';
+  }
+
+  // helper function for sending an AJAX request
+
+  function ajax(method, url, data, success, error) {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
+
+  // handle the form submission event
+
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const data = new FormData(form);
+    console.log(data);
+    ajax(form.method, form.action, data, formSuccess, formError);
+  });
+});

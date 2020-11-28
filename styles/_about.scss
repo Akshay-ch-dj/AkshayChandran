@@ -363,6 +363,13 @@
   box-shadow: none;
 }
 
+#form-status {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $base-color;
+  margin-left: 4rem;
+}
+
 @media screen and (min-width: 1200px) {
   .tab-main {
     margin-left: 1%;
@@ -426,16 +433,19 @@
     margin-left: 3rem;
   }
 
-  .about-tabs {
-    /* Style the buttons that are used to open the tab content */
-    button {
-      font-size: 1.4rem;
-    }
+  /* Style the buttons that are used to open the tab content */
+  .about-tabs button {
+    font-size: 1.4rem;
   }
+
   #contact-form {
     .submit-button {
       margin: 2rem 0 0;
     }
+  }
+
+  #form-status {
+    margin: 2rem 0 1rem;
   }
 }
 
@@ -517,5 +527,9 @@
     .submit-button {
       margin: 2rem auto 0rem;
     }
+  }
+
+  #form-status {
+    font-size: 1.4rem;
   }
 }

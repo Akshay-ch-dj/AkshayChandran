@@ -862,7 +862,7 @@ a {
 
 .card .face.face1 .content img {
   display: block;
-  width: 85%;
+  width: 150px;
   height: auto;
   margin: 0 auto;
   -webkit-transition: 0.5s;
@@ -1628,6 +1628,13 @@ a {
           box-shadow: none;
 }
 
+#form-status {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #20aa76;
+  margin-left: 4rem;
+}
+
 @media screen and (min-width: 1200px) {
   .tab-main {
     margin-left: 1%;
@@ -1698,14 +1705,15 @@ a {
   .tab-main {
     margin-left: 3rem;
   }
-  .about-tabs {
-    /* Style the buttons that are used to open the tab content */
-  }
+  /* Style the buttons that are used to open the tab content */
   .about-tabs button {
     font-size: 1.4rem;
   }
   #contact-form .submit-button {
     margin: 2rem 0 0;
+  }
+  #form-status {
+    margin: 2rem 0 1rem;
   }
 }
 
@@ -1787,6 +1795,9 @@ a {
   #contact-form .submit-button {
     margin: 2rem auto 0rem;
   }
+  #form-status {
+    font-size: 1.4rem;
+  }
 }
 
 #footer {
@@ -1806,6 +1817,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1873,4 +1885,4 @@ a {
     font-size: 1.2rem;
   }
 }
-/*# sourceMappingURL=portfolio_page.css.map */
+/*# sourceMappingURL=style.css.map */
