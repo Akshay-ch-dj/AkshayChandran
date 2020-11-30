@@ -976,6 +976,11 @@ a {
   display: none;
 }
 
+#link--disabled {
+  pointer-events: none;
+  color: rgba(182, 182, 182, 0.4);
+}
+
 @media screen and (max-width: 1100px) {
   .project-tile {
     -webkit-box-orient: horizontal;
