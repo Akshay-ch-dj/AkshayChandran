@@ -174,7 +174,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function formSuccess() {
     form.reset();
     button.disabled = true;
-    status.innerHTML = 'Thanks!, I will contact you soon';
+    status.innerHTML = 'Thanks! I will contact you soon';
   }
 
   function formError() {
