@@ -328,6 +328,10 @@ a {
           align-items: center;
 }
 
+#welcome a {
+  color: #fff;
+}
+
 #welcome .pf-card {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -1471,13 +1475,14 @@ a {
 }
 
 #Education {
-  margin: 4rem 4rem;
+  margin: 2rem 4rem;
   font-size: 1.5rem;
 }
 
 #Education p {
   font-family: 'Montserrat', sans-serif;
   line-height: 2.6rem;
+  margin-bottom: 2rem;
 }
 
 #Education p::before {
